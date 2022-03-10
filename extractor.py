@@ -14,12 +14,22 @@ if not demoji.last_downloaded_timestamp():
     demoji.download_codes()
 
 EXTRA_WORDS = []
+
+
 def get_extra_words():
+    """
+    Функция получения списка EXTRA_WORDS
+    из файла extra-words.xls
+
+    Файл должен находится в директории
+    bot.py и соответствующе заполнен
+    """
     global EXTRA_WORDS
     rb = open_workbook('extra-words.xls', formatting_info=True)
     sheet = rb.sheet_by_index(0)
     EXTRA_WORDS = sheet.col_values(0, 0, sheet.nrows)
     return sheet.col_values(0, 0, sheet.nrows)
+
 
 def get_today_extract_container_path():
     return 'extracted/%s' % datetime.today().date()
@@ -48,6 +58,9 @@ def apply_emoji_filter(text: str) -> str:
 
 
 def extract_from_file(filepath: str) -> list:
+    """
+    Функция получения данных из xsl файла
+    """
     result = []
     workbook = open_workbook(filepath)
     sheet = workbook.sheet_by_index(0)
@@ -71,17 +84,49 @@ class Line:
     def __str__(self):
         return self.__dict__.__str__()
 
+
 def get_last_digit(text: str) -> int:
+    """
+    Метод поиска стоимости в строке
+
+
+        Input:
+                - text: str - Текст
+                - filepath: str - путь к дириктории
+
+        Output:
+                - int
+        Example return:
+         85000
+    """
     text = text.strip()
     findall_digit = []
     findall_digit = re.findall('\d+', text)
     if len(findall_digit) > 0:
         result = findall_digit[-1].strip()
         if result.isdigit() and int(result) > 999 and int(result) < 1000000:
-            last_digit_end_index = text.rfind(result) + len(result)
             return result
     return None
+
+
 def extract_from_text(text: str) -> list:
+    """
+    Метод преобразования текста в список предложений
+
+
+        Input:
+                - today_extract: list - Текст
+                - filepath: str - путь к дириктории
+
+        Output:
+                - list(list(str, str), ...)
+        Example return:
+         [['apple iphone 13 256gb starlight', '83500'], ['apple iphone 15 256gb starlight', '835000']]
+        Raises
+        ------
+            Exception
+                Вывод ошибки в логи
+    """
     result = []
     try:
         text = text.replace('--', '-')
@@ -90,7 +135,7 @@ def extract_from_text(text: str) -> list:
         text = re.sub('-+', '-', text)
         text = text.lower()
         prev_line: Line = None
-        #разделить на строки
+        # разделить на строки
         pre_result = []
         pre_result = text.split('\n')
         # найти все строки с товарами и обработать их
@@ -100,18 +145,19 @@ def extract_from_text(text: str) -> list:
                 if str.find(i, word) != -1:
                     ci = 1
                     price = get_last_digit(i)
-                    #print(price)
+                    # print(price)
                     if price is not None:
-                        marge = i.replace(price,'')
+                        marge = i.replace(price, '')
                         result.append([marge, price])
                     else:
-                        logging.info('NO PRICE '+str(i))
+                        logging.info('NO PRICE ' + str(i))
             if ci == 0:
                 logging.warning(i)
-                #print(i)
-        return(result)
+                # print(i)
+        return (result)
     except Exception as exx:
-        print(exx)
+        logging.error(exx)
+
     def get_text_before_dash(text: str) -> str:
         if '-' in text:
             dash_index = text.rindex('-')
@@ -153,6 +199,20 @@ def extract_from_text(text: str) -> list:
 
 
 def extract_to_xls_file(extract: list, filename: str):
+    """
+    Метод выгрузки текста в xls
+
+
+        Input:
+                - extract: list - Текст
+                - filename: str - абсолютный путь
+
+
+        Raises
+        ------
+            Exception
+                Вывод ошибки в логи
+    """
     workbook = Workbook()
     sheet = workbook.add_sheet("Таблица 1")
     for row_index in range(len(extract)):
@@ -212,4 +272,12 @@ def create_today_actual_xls(filepath: str):
 
 
 def save_today_actual_xls(today_extract: list, filepath: str):
+    """
+    Метод выгрузки текста в xls
+
+
+        Input:
+                - today_extract: list - Текст
+                - filepath: str - путь к дириктории
+    """
     extract_to_xls_file(today_extract, 'public/%s/actual' % filepath)

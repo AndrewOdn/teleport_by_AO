@@ -7,18 +7,26 @@ from pyrogram import Client, Filters, Message
 
 from extractor import apply_emoji_filter, extract_from_text, \
     save_today_actual_xls, delete_extract_container_folder, get_extra_words
-from settings import USER_NAME, API_ID, API_HASH, DATE_WITH_TIME_FORMAT, HANDLED_CHATS
+from settings import USER_NAME, API_ID, API_HASH, DATE_WITH_TIME_FORMAT
 
 EXTRA_WORDS = get_extra_words()
+HANDLED_CHATS = []
 logging.basicConfig(filename='logs/%s.txt' % datetime.today().strftime(DATE_WITH_TIME_FORMAT)
                     , level=logging.INFO
                     , format='[%(asctime)s:%(levelname)s]: %(message)s'
                     , datefmt='%Y-%m-%d %H:%M:%S')
 app = Client(USER_NAME, api_id=API_ID, api_hash=API_HASH)
 def get_hadled_chats():
+    """
+    Функция получения списка всех чатов
+    для HANDLED_CHATS
+    """
     for i in app.get_dialogs():
         HANDLED_CHATS.append(i['chat']['id'])
 def get_chat_name(message: Message) -> str:
+    """
+    Функция получения имени чата
+    """
     first_name = message.chat.first_name
     if first_name:
         return first_name
@@ -35,6 +43,10 @@ def get_chat_name(message: Message) -> str:
 
 
 def extractor_from_message(message: Message) -> list:
+    """
+    Метод запуска конертирования текста из message в список
+    Example return [['Redmi Note 10T 128Gb Silver', 17250], ['Redmi Note 10T 128Gb Silver', 18250], ['Redmi Note 10T 128Gb Silver', 19250]]
+    """
     try:
         text = message.text
         if not text:
@@ -52,6 +64,9 @@ def extractor_from_message(message: Message) -> list:
 
 
 def force_in_mem_update_today_extract_for_chat(chat_id):
+    """
+    Метод парсинга сообщений в чате, которые появились сегодня
+    """
     today_date = datetime.utcnow().date()
     delete_extract_container_folder(chat_id)
     today_extract = []
@@ -70,6 +85,10 @@ def get_msk_formatted_time(datetime) -> str:
 
 
 def force_in_mem_today_actual_for_all(handled_chat):
+    """
+    Метод запуска парсинга для чата
+    Если input -1, то запуск парсинга всех чатов
+    """
     print('Today all started')
     logging.info('Today all started')
     if handled_chat == -1:
@@ -94,34 +113,35 @@ def force_in_mem_today_actual_for_all(handled_chat):
 
 @app.on_deleted_messages()
 def on_messages_delete(client, messages):
+    """
+    Метод запуска парсинга чата после удаленного сообщения
+    """
     if len(messages) > 0:
         force_in_mem_today_actual_for_all()
 
 
 @app.on_message(Filters.edited)
 def on_message_edited(client, message):
+    """
+    Метод запуска парсинга чата после редактированного сообщения
+    """
     chat_id = message.chat.id
-    if chat_id in HANDLED_CHATS:
-        users = HANDLED_CHATS[chat_id]
-        for to in users:
-            try:
-                if to == chat_id:
-                    forwarded_message = message
-                else:
-                    forwarded_message = message.forward(chat_id=to, as_copy=True)
-                forwarded_message.reply_text('Изменено в "%s"' % get_msk_formatted_time(message.edit_date))
-            except:
-                logging.error('Error when forward to %s' % to)
-        if datetime.utcfromtimestamp(message.date).date() == datetime.today().date():
-            force_in_mem_today_actual_for_all()
+    #message.reply_text('Изменено в "%s"' % get_msk_formatted_time(message.edit_date))
+    """Оповещения сообщением в тг"""
+    if datetime.utcfromtimestamp(message.date).date() == datetime.today().date():
+        force_in_mem_today_actual_for_all()
 
 
 @app.on_message()
 def on_message(client, message):
+    """
+    Метод запуска парсинга чата после полученного сообщения
+    """
     chat_id = message.chat.id
     if not message.empty:
-        print('Новое сообщение из "%s"' % get_chat_name(message))
-        #forwarded_message.reply_text('Новое сообщение из "%s"' % get_chat_name(message))
+        #print('Новое сообщение из "%s"' % get_chat_name(message))
+        #message.reply_text('Новое сообщение из "%s"' % get_chat_name(message))
+        """Оповещения сообщением в тг"""
         force_in_mem_today_actual_for_all(chat_id)
 
 
