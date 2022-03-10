@@ -9,11 +9,17 @@ import demoji
 import flag
 from xlrd import open_workbook
 from xlwt import Workbook
-from settings import EXTRA_WORDS
 
 if not demoji.last_downloaded_timestamp():
     demoji.download_codes()
 
+EXTRA_WORDS = []
+def get_extra_words():
+    global EXTRA_WORDS
+    rb = open_workbook('extra-words.xls', formatting_info=True)
+    sheet = rb.sheet_by_index(0)
+    EXTRA_WORDS = sheet.col_values(0, 0, sheet.nrows)
+    return sheet.col_values(0, 0, sheet.nrows)
 
 def get_today_extract_container_path():
     return 'extracted/%s' % datetime.today().date()
@@ -67,34 +73,45 @@ class Line:
 
 def get_last_digit(text: str) -> int:
     text = text.strip()
+    findall_digit = []
     findall_digit = re.findall('\d+', text)
-    if findall_digit and len(findall_digit) > 0:
+    if len(findall_digit) > 0:
         result = findall_digit[-1].strip()
-        if result and result.isdigit() and int(result) > 999:
+        if result.isdigit() and int(result) > 999 and int(result) < 1000000:
             last_digit_end_index = text.rfind(result) + len(result)
-            if len(text) is last_digit_end_index:
-                return result
+            return result
     return None
 def extract_from_text(text: str) -> list:
     result = []
-    text = text.replace('—', '-').replace('--', '-')
-    text = re.sub('-+', '-', text)
-    text = text.lower()
-    prev_line: Line = None
-    #разделить на строки
-    pre_result = []
-    pre_result = text.split('\n')
-    # найти все строки с товарами и обработать их
-    for i in pre_result:
-        for word in EXTRA_WORDS:
-            if str.find(i, word) != -1:
-                price = get_last_digit(i)
-                marge = i.replace(price,'')
-                result.append([marge, price])
-    if result == []:
-        logging.warning(text)
-    return(result)
-
+    try:
+        text = text.replace('--', '-')
+        text = text.replace('*', '')
+        text = text.replace('₽', '')
+        text = re.sub('-+', '-', text)
+        text = text.lower()
+        prev_line: Line = None
+        #разделить на строки
+        pre_result = []
+        pre_result = text.split('\n')
+        # найти все строки с товарами и обработать их
+        for i in pre_result:
+            ci = 0
+            for word in EXTRA_WORDS:
+                if str.find(i, word) != -1:
+                    ci = 1
+                    price = get_last_digit(i)
+                    #print(price)
+                    if price is not None:
+                        marge = i.replace(price,'')
+                        result.append([marge, price])
+                    else:
+                        logging.info('NO PRICE '+str(i))
+            if ci == 0:
+                logging.warning(i)
+                #print(i)
+        return(result)
+    except Exception as exx:
+        print(exx)
     def get_text_before_dash(text: str) -> str:
         if '-' in text:
             dash_index = text.rindex('-')
@@ -136,10 +153,8 @@ def extract_from_text(text: str) -> list:
 
 
 def extract_to_xls_file(extract: list, filename: str):
-    print("xls")
     workbook = Workbook()
     sheet = workbook.add_sheet("Таблица 1")
-    print(extract)
     for row_index in range(len(extract)):
         row_data = extract[row_index]
         sheet.write(row_index, 0, row_data[0])
@@ -149,7 +164,6 @@ def extract_to_xls_file(extract: list, filename: str):
     except IOError as error:
         logging.exception(error)
     workbook.save('%s.xls' % filename)
-    print('%s.xls' % filename)
 
 
 def extract_to_today_xls_file(extract: list, filename: str):

@@ -6,16 +6,18 @@ import pytz
 from pyrogram import Client, Filters, Message
 
 from extractor import apply_emoji_filter, extract_from_text, \
-    save_today_actual_xls, delete_extract_container_folder
+    save_today_actual_xls, delete_extract_container_folder, get_extra_words
 from settings import USER_NAME, API_ID, API_HASH, DATE_WITH_TIME_FORMAT, HANDLED_CHATS
 
+EXTRA_WORDS = get_extra_words()
 logging.basicConfig(filename='logs/%s.txt' % datetime.today().strftime(DATE_WITH_TIME_FORMAT)
                     , level=logging.INFO
                     , format='[%(asctime)s:%(levelname)s]: %(message)s'
                     , datefmt='%Y-%m-%d %H:%M:%S')
 app = Client(USER_NAME, api_id=API_ID, api_hash=API_HASH)
-
-
+def get_hadled_chats():
+    for i in app.get_dialogs():
+        HANDLED_CHATS.append(i['chat']['id'])
 def get_chat_name(message: Message) -> str:
     first_name = message.chat.first_name
     if first_name:
@@ -67,15 +69,23 @@ def get_msk_formatted_time(datetime) -> str:
     return edit_time.strftime('%m-%d %H:%M:%S')
 
 
-def force_in_mem_today_actual_for_all():
+def force_in_mem_today_actual_for_all(handled_chat):
     print('Today all started')
     logging.info('Today all started')
-    for handled_chat_id in HANDLED_CHATS:
-        print(handled_chat_id)
-        logging.info('Today %s started' % handled_chat_id)
-        try:
-            force_in_mem_update_today_extract_for_chat(handled_chat_id)
+    if handled_chat == -1:
+        for handled_chat_id in HANDLED_CHATS:
+            print(handled_chat_id)
+            logging.info('Today %s started' % handled_chat_id)
+            try:
+                force_in_mem_update_today_extract_for_chat(handled_chat_id)
 
+            except Exception as e:
+                logging.exception(e)
+    else:
+        print(handled_chat)
+        logging.info('Today %s started' % handled_chat)
+        try:
+            force_in_mem_update_today_extract_for_chat(handled_chat)
         except Exception as e:
             logging.exception(e)
     print('Today all finish')
@@ -112,12 +122,13 @@ def on_message(client, message):
     if not message.empty:
         print('Новое сообщение из "%s"' % get_chat_name(message))
         #forwarded_message.reply_text('Новое сообщение из "%s"' % get_chat_name(message))
-        force_in_mem_today_actual_for_all()
+        force_in_mem_today_actual_for_all(chat_id)
 
 
 def main():
     app.start()
-    force_in_mem_today_actual_for_all()
+    get_hadled_chats()
+    force_in_mem_today_actual_for_all(-1)
     Client.idle()
     app.stop()
 
