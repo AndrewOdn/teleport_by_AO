@@ -1,0 +1,295 @@
+[2022-03-10 09:21:39:INFO]: Connecting...
+[2022-03-10 09:21:39:INFO]: Connected! Production DC2 - IPv4 - TCPAbridgedO
+[2022-03-10 09:21:40:INFO]: Session initialized: Layer 112
+[2022-03-10 09:21:40:INFO]: Device: CPython 3.8.6 - Pyrogram 0.17.1
+[2022-03-10 09:21:40:INFO]: System: Windows 10 (EN)
+[2022-03-10 09:21:40:INFO]: Synced "Channellistener" in 0.0 ms
+[2022-03-10 09:21:40:INFO]: Today all started
+[2022-03-10 09:21:40:INFO]: Today -1001517694982 started
+[2022-03-10 09:21:40:INFO]: delete_extract_container_folder(extracted/2022-03-10/-1001517694982)
+[2022-03-10 09:21:40:WARNING]: go
+[2022-03-10 09:21:40:WARNING]: s
+[2022-03-10 09:21:40:WARNING]: s
+[2022-03-10 09:21:40:WARNING]: gg
+[2022-03-10 09:21:40:WARNING]: go
+[2022-03-10 09:21:40:WARNING]: go
+[2022-03-10 09:21:40:WARNING]: go
+[2022-03-10 09:21:40:WARNING]: lets gogogo
+[2022-03-10 09:21:40:WARNING]: go
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:WARNING]: готово
+[2022-03-10 09:21:40:ERROR]: Message without text
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 41, in extractor_from_message
+    raise Exception('Message without text')
+Exception: Message without text
+[2022-03-10 09:21:40:ERROR]: Message without text
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 41, in extractor_from_message
+    raise Exception('Message without text')
+Exception: Message without text
+[2022-03-10 09:21:40:WARNING]: gjhk
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:WARNING]: ф
+[2022-03-10 09:21:40:WARNING]: ордаааааа
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:WARNING]: новое сообщение из "orda listen"
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:WARNING]: новое сообщение из "orda listen"
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:ERROR]: replace() argument 1 must be str, not None
+Traceback (most recent call last):
+  File "C:/Users/ElenaKulikova/PycharmProjects/teleport/bot.py", line 44, in extractor_from_message
+    return extract_from_text(
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 92, in extract_from_text
+    marge = i.replace(price,'')
+TypeError: replace() argument 1 must be str, not None
+[2022-03-10 09:21:40:WARNING]: from none where 2022-03-10 03:17:30+00:00 text super ez money take it
+[2022-03-10 09:21:40:WARNING]: from none where 2022-03-10 03:17:10+00:00 text message(id=27245, peer_id=peeruser(user_id=5289717591), date=datetime.datetime(2022, 3, 10, 3, 17, 10, tzinfo=datetime.timezone.utc), message='super ez money take it', out=true, mentioned=false, media_unread=false, silent=false, post=false, from_scheduled=false, legacy=false, edit_hide=false, pinned=false, from_id=peeruser(user_id=1421340487), fwd_from=none, via_bot_id=none, reply_to=none, media=none, reply_markup=none, entities=[], views=none, forwards=none, replies=none, edit_date=none, post_author=none, grouped_id=none, restriction_reason=[], ttl_period=none)
+[2022-03-10 09:21:40:WARNING]: from none where 2022-03-10 03:15:22+00:00 text message(id=27244, peer_id=peeruser(user_id=5289717591), date=datetime.datetime(2022, 3, 10, 3, 15, 22, tzinfo=datetime.timezone.utc), message='super ez money take it', out=true, mentioned=false, media_unread=false, silent=false, post=false, from_scheduled=false, legacy=false, edit_hide=false, pinned=false, from_id=peeruser(user_id=1421340487), fwd_from=none, via_bot_id=none, reply_to=none, media=none, reply_markup=none, entities=[], views=none, forwards=none, replies=none, edit_date=none, post_author=none, grouped_id=none, restriction_reason=[], ttl_period=none)
+[2022-03-10 09:21:40:WARNING]: super ez money take it
+[2022-03-10 09:21:40:WARNING]: free money get all
+[2022-03-10 09:21:40:WARNING]: много money on my neck but so painful
+[2022-03-10 09:21:40:WARNING]: много money on my neck but so painful
+[2022-03-10 09:21:40:WARNING]: обажаю группу pain)
+[2022-03-10 09:21:40:WARNING]: обажаю группу pain)
+[2022-03-10 09:21:40:WARNING]: maker of money
+[2022-03-10 09:21:40:WARNING]: no pain
+[2022-03-10 09:21:40:WARNING]: asdasdasd
+[2022-03-10 09:21:40:WARNING]: asd
+[2022-03-10 09:21:40:WARNING]: dsf
+[2022-03-10 09:21:40:ERROR]: [WinError 183] Невозможно создать файл, так как он уже существует: 'public/-1001517694982/actual'
+Traceback (most recent call last):
+  File "C:\Users\ElenaKulikova\PycharmProjects\teleport\extractor.py", line 148, in extract_to_xls_file
+    makedirs(filename)
+  File "C:\Users\ElenaKulikova\AppData\Local\Programs\Python\Python38\lib\os.py", line 223, in makedirs
+    mkdir(name, mode)
+FileExistsError: [WinError 183] Невозможно создать файл, так как он уже существует: 'public/-1001517694982/actual'
+[2022-03-10 09:21:40:INFO]: Today all finish
+[2022-03-10 09:21:47:INFO]: Send 8 acks
