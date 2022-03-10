@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # telegram
-USER_NAME = 'Channellistener'
-API_ID = '13834047'
-API_HASH = 'ae18a6c3dfd09897f42a38c5036ac1af'
+USER_NAME = ''
+API_ID = ''
+API_HASH = ''
 
 """ https://my.telegram.org/apps 
     Советуется использовать телеграмм аккаунт ТОЛЬКО с чатами которые нужно парсить
